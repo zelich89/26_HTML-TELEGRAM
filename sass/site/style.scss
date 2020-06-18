@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400:500;700&display=swap");
+
+@mixin font($font-size, $line-height, $font-weight: null) {
+  font: $font-weight #{$font-size} / #{$line-height} 'Roboto', sans-serif;
+}
+
+$tablet: 768px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: top;
+}
+
+body {
+  background: #252820;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1400px;
+  background-color: #2D9CDB;
+  border-radius: 16px;
+  padding: 62px;
+}
+
+.product {
+  &__items {
+    @media (max-width: $tablet) {
+      border-radius: 16px;
+    }
+    @media (max-width: $tablet) {
+      background: #FFFFFF;
+        padding: 0 30px;
+      }
+    }
+
+  &__item {
+    background: #FFFFFF;
+    padding: 15px 30px 35px;
+    display: flex;
+    @media (min-width: $tablet) {
+      border-radius: 16px;
+    }
+
+    &--indent:not(:last-child) {
+      @media (min-width: $tablet) {
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      display: block;
+      padding: 20px;
+      &:first-child {
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+      }
+      &:last-child {
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid #828282;
+      }
+    }
+  }
+
+  &__abo {
+    display: flex;
+    align-items: center;
+    width: 130px;
+    @include font(20px, 23px, 500);
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    &--indent {
+      @media (max-width: $tablet) {
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  &__picture-warp {
+
+    &--indent {
+      margin-right: 30px;
+    }
+  }
+  &__picture {
+    width: 55px;
+    height: 55px;
+  }
+
+  &__block {
+    white-space: nowrap;
+
+    &--indent {
+      padding-right: 77px;
+    }
+  }
+
+  &__title {
+    @include font(20px, 23px);
+
+    &--indent {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__price {
+    @include font(20px, 23px, bold);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  &__old {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
