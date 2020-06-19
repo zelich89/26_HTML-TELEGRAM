@@ -18,7 +18,6 @@ img {
 
 body {
   background: #252820;
-  min-width: 350px;
 }
 
 .container {
@@ -27,6 +26,9 @@ body {
   background-color: #2D9CDB;
   border-radius: 16px;
   padding: 62px;
+  @media (max-width: $tablet) {
+    padding: 22px;
+  }
 }
 
 .product {
