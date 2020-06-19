@@ -104,6 +104,7 @@ body {
   &__info {
     display: flex;
     align-items: center;
+    width: 100%;
 
     &--indent {
       @media (max-width: $tablet) {
@@ -129,6 +130,7 @@ body {
   }
 
   &__block {
+    width: 100%;
     white-space: nowrap;
 
     &--indent {
@@ -138,6 +140,9 @@ body {
 
   &__title {
     @include font(20px, 23px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     @media (max-width: $tablet) {
       @include font(16px, 19px);
     }
